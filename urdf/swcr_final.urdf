@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="swcr">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.033488 0.002401 3.727E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.43099" />
+      <inertia
+        ixx="0.0023524"
+        ixy="-7.52E-05"
+        ixz="-1.7767E-06"
+        iyy="0.0069009"
+        iyz="-2.5498E-07"
+        izz="0.0045936" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.10196 0.10196 0.10196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="clampfl_link">
+    <inertial>
+      <origin
+        xyz="0 -0.00794730952655254 -0.00531690587434677"
+        rpy="0 0 0" />
+      <mass
+        value="0.00225642305883932" />
+      <inertia
+        ixx="5.27399681512764E-07"
+        ixy="-3.48854888729488E-22"
+        ixz="-1.00782078400116E-22"
+        iyy="4.60834249766667E-07"
+        iyz="1.05062552841159E-07"
+        izz="8.15954753495241E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/clampfl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/clampfl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="clampfl_joint"
+    type="fixed">
+    <origin
+      xyz="0.085 0.115 -0.0055"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="clampfl_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motorfl_link">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 0.000222599770393128 -0.0130762328986528"
+        rpy="0 0 0" />
+      <mass
+        value="0.0508582882474789" />
+      <inertia
+        ixx="2.23164516779721E-05"
+        ixy="-8.470329472543E-22"
+        ixz="9.26442286059391E-22"
+        iyy="2.22397244366029E-05"
+        iyz="-4.37293213045901E-07"
+        izz="6.78559817500315E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/motorfl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/motorfl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motorfl_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.017565 -0.014"
+      rpy="0 0 -0.39309" />
+    <parent
+      link="clampfl_link" />
+    <child
+      link="motorfl_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheelfl_link">
+    <inertial>
+      <origin
+        xyz="-0.0175 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.317103656626172" />
+      <inertia
+        ixx="0.000397061568421802"
+        ixy="3.99430910495104E-22"
+        ixz="-5.97755086664019E-21"
+        iyy="0.000230784706182798"
+        iyz="0"
+        izz="0.000230784706182798" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/wheelfl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.588235294117647 0.588235294117647 0.631372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/wheelfl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelfl_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.007 0.0343"
+      rpy="1.901 1.5708 0" />
+    <parent
+      link="motorfl_link" />
+    <child
+      link="wheelfl_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="clampfr_link">
+    <inertial>
+      <origin
+        xyz="0 -0.00794730952655252 -0.00531690587434674"
+        rpy="0 0 0" />
+      <mass
+        value="0.00225642305883932" />
+      <inertia
+        ixx="5.27399681512763E-07"
+        ixy="-3.76646610045922E-22"
+        ixz="-7.60548081235195E-23"
+        iyy="4.60834249766665E-07"
+        iyz="1.0506255284116E-07"
+        izz="8.1595475349524E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/clampfr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/clampfr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="clampfr_joint"
+    type="fixed">
+    <origin
+      xyz="0.085 -0.115 -0.0055"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="clampfr_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motorfr_link">
+    <inertial>
+      <origin
+        xyz="0 0.000222599770393128 -0.0130762328986528"
+        rpy="0 0 0" />
+      <mass
+        value="0.0508582882474789" />
+      <inertia
+        ixx="2.23164516779721E-05"
+        ixy="4.89465702383976E-23"
+        ixz="9.48921012034999E-22"
+        iyy="2.22397244366029E-05"
+        iyz="-4.37293213045901E-07"
+        izz="6.78559817500315E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/motorfr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/motorfr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motorfr_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.017565 -0.014"
+      rpy="0 0 0" />
+    <parent
+      link="clampfr_link" />
+    <child
+      link="motorfr_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheelfr_link">
+    <inertial>
+      <origin
+        xyz="-0.0175 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.317103656626173" />
+      <inertia
+        ixx="0.000397061568421803"
+        ixy="-1.88067547833225E-21"
+        ixz="4.10331208188529E-21"
+        iyy="0.000230784706182798"
+        iyz="2.03287907341032E-20"
+        izz="0.000230784706182798" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/wheelfr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.588235294117647 0.588235294117647 0.631372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/wheelfr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelfr_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.007 0.0343"
+      rpy="1.1331 1.5708 0" />
+    <parent
+      link="motorfr_link" />
+    <child
+      link="wheelfr_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="clampbl_link">
+    <inertial>
+      <origin
+        xyz="1.38777878078145E-17 -0.00794730952655256 -0.00531690587434672"
+        rpy="0 0 0" />
+      <mass
+        value="0.00225642305883932" />
+      <inertia
+        ixx="5.27399681512766E-07"
+        ixy="-3.6279892711689E-22"
+        ixz="-1.06821018648135E-22"
+        iyy="4.60834249766667E-07"
+        iyz="1.0506255284116E-07"
+        izz="8.15954753495242E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/clampbl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/clampbl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="clampbl_joint"
+    type="fixed">
+    <origin
+      xyz="-0.085 0.115 -0.0055"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="clampbl_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motorbl_link">
+    <inertial>
+      <origin
+        xyz="0 0.000222599770393128 -0.0130762328986527"
+        rpy="0 0 0" />
+      <mass
+        value="0.0508582882474789" />
+      <inertia
+        ixx="2.23164516779721E-05"
+        ixy="-8.470329472543E-22"
+        ixz="9.52912065661088E-22"
+        iyy="2.22397244366029E-05"
+        iyz="-4.37293213045901E-07"
+        izz="6.78559817500315E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/motorbl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/motorbl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motorbl_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.017565 -0.014"
+      rpy="0 0 -0.39309" />
+    <parent
+      link="clampbl_link" />
+    <child
+      link="motorbl_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheelbl_link">
+    <inertial>
+      <origin
+        xyz="-0.0175 1.38777878078145E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.317103656626173" />
+      <inertia
+        ixx="0.000397061568421803"
+        ixy="-4.25765791653797E-21"
+        ixz="2.67145513017559E-21"
+        iyy="0.000230784706182798"
+        iyz="0"
+        izz="0.000230784706182798" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/wheelbl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.588235294117647 0.588235294117647 0.631372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/wheelbl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelbl_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.007 0.0343"
+      rpy="0.63091 1.5708 0" />
+    <parent
+      link="motorbl_link" />
+    <child
+      link="wheelbl_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="clampbr_link">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 -0.00794730952655256 -0.00531690587434672"
+        rpy="0 0 0" />
+      <mass
+        value="0.00225642305883932" />
+      <inertia
+        ixx="5.27399681512766E-07"
+        ixy="-3.63478487994398E-22"
+        ixz="-1.06437772260566E-22"
+        iyy="4.60834249766667E-07"
+        iyz="1.0506255284116E-07"
+        izz="8.15954753495242E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/clampbr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/clampbr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="clampbr_joint"
+    type="fixed">
+    <origin
+      xyz="-0.085 -0.115 -0.0055"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="clampbr_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="motorbr_link">
+    <inertial>
+      <origin
+        xyz="0 0.000222599770393132 -0.0130762328986527"
+        rpy="0 0 0" />
+      <mass
+        value="0.0508582882474789" />
+      <inertia
+        ixx="2.23164516779721E-05"
+        ixy="4.99476810932792E-23"
+        ixz="9.96559716097902E-22"
+        iyy="2.22397244366029E-05"
+        iyz="-4.37293213045901E-07"
+        izz="6.78559817500315E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/motorbr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/motorbr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motorbr_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.017565 -0.014"
+      rpy="0 0 0" />
+    <parent
+      link="clampbr_link" />
+    <child
+      link="motorbr_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheelbr_link">
+    <inertial>
+      <origin
+        xyz="-0.0175 1.73472347597681E-18 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.317103656626173" />
+      <inertia
+        ixx="0.000397061568421802"
+        ixy="1.60603699048795E-20"
+        ixz="-1.24830646996344E-20"
+        iyy="0.000230784706182798"
+        iyz="1.6940658945086E-21"
+        izz="0.000230784706182798" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/wheelbr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.588235294117647 0.588235294117647 0.631372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/wheelbr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheelbr_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.007 0.0343"
+      rpy="3.0343 1.5708 0" />
+    <parent
+      link="motorbr_link" />
+    <child
+      link="wheelbr_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="pan_link">
+    <inertial>
+      <origin
+        xyz="0.0703865456483978 -0.040983662047795 -9.14646763558058E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00414015837851596" />
+      <inertia
+        ixx="1.41251649608978E-05"
+        ixy="6.18415608321664E-06"
+        ixz="4.07652089216916E-09"
+        iyy="2.34368804471581E-05"
+        iyz="-1.82327329282432E-09"
+        izz="1.57097655917661E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/pan_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/pan_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pan_joint"
+    type="revolute">
+    <origin
+      xyz="0.135 0 0.0155"
+      rpy="1.5708 -0.18451 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="pan_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="sonar1_link">
+    <inertial>
+      <origin
+        xyz="-4.2013767370952E-06 0.00567622480203889 -5.24987503883294E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00622773690362078" />
+      <inertia
+        ixx="2.38540425535703E-07"
+        ixy="-1.31879684713869E-10"
+        ixz="-1.99662276893582E-10"
+        iyy="1.22055290848562E-06"
+        iyz="2.02464983853627E-09"
+        izz="1.19426247251853E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/sonar1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/sonar1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sonar1_joint"
+    type="fixed">
+    <origin
+      xyz="0.2025 -0.1135 0.01585"
+      rpy="0 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="sonar1_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="sonar2_link">
+    <inertial>
+      <origin
+        xyz="-4.20137673698417E-06 0.00567622480203883 -5.2498750388312E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00622773690362079" />
+      <inertia
+        ixx="2.38540425535703E-07"
+        ixy="-1.31879684708852E-10"
+        ixz="-1.99662276893324E-10"
+        iyy="1.22055290848562E-06"
+        iyz="2.02464983853643E-09"
+        izz="1.19426247251854E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/sonar2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/sonar2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sonar2_joint"
+    type="fixed">
+    <origin
+      xyz="0.30803 -0.098029 0.01585"
+      rpy="0 0 -2.3562" />
+    <parent
+      link="base_link" />
+    <child
+      link="sonar2_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="sonar3_link">
+    <inertial>
+      <origin
+        xyz="-4.19967189316105E-06 -0.00567646746763512 5.270535664436E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00622689555378257" />
+      <inertia
+        ixx="2.38530392018969E-07"
+        ixy="1.31926825967941E-10"
+        ixz="1.98478137228786E-10"
+        iyy="1.22041336725841E-06"
+        iyz="2.02380918538213E-09"
+        izz="1.19409341838079E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/sonar3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/sonar3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sonar3_joint"
+    type="fixed">
+    <origin
+      xyz="0.3235 0 0.01585"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="sonar3_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="sonar4_link">
+    <inertial>
+      <origin
+        xyz="-4.20137673701193E-06 0.00567622480203889 -5.2498750388319E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00622773690362079" />
+      <inertia
+        ixx="2.38540425535703E-07"
+        ixy="-1.31879684705047E-10"
+        ixz="-1.99662276893037E-10"
+        iyy="1.22055290848562E-06"
+        iyz="2.02464983853631E-09"
+        izz="1.19426247251853E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/sonar4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/sonar4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sonar4_joint"
+    type="fixed">
+    <origin
+      xyz="0.30803 0.098029 0.01585"
+      rpy="0 0 -0.7854" />
+    <parent
+      link="base_link" />
+    <child
+      link="sonar4_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="soanr5_link">
+    <inertial>
+      <origin
+        xyz="-4.20137673701193E-06 0.0056762248020389 -5.24987503883259E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00622773690362079" />
+      <inertia
+        ixx="2.38540425535703E-07"
+        ixy="-1.31879684706997E-10"
+        ixz="-1.99662276893271E-10"
+        iyy="1.22055290848562E-06"
+        iyz="2.02464983853627E-09"
+        izz="1.19426247251854E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/soanr5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/soanr5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sonar5_joint"
+    type="fixed">
+    <origin
+      xyz="0.2025 0.1135 0.01585"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="soanr5_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-0.0878668994547783 0.0718483842853071 0.0791288325428356"
+        rpy="0 0 0" />
+      <mass
+        value="0.0487330234277384" />
+      <inertia
+        ixx="1.62373140931273E-05"
+        ixy="-2.81173883546056E-08"
+        ixz="-7.47687719630495E-08"
+        iyy="2.43825952251294E-05"
+        iyz="-1.92052078939861E-06"
+        izz="1.3626110439769E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://swcr/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.028971 0.093208 -0.018149"
+      rpy="1.6259 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
