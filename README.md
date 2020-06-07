@@ -8,4 +8,4 @@ rosrun rosserial_arduino serial_node.py
 
 Then to make it run autonomously using 
 
-rorun swcr obstacle.py
+rosrun swcr obstacle_avoidance.py
