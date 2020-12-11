@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 import rospy
 from geometry_msgs.msg import Twist
-from swcr.msg import sensor
+from sensor_msgs.msg import Range
 
 pub = None
 
 def main():
-    global pub
+    global pub,right,front,fright,left,fleft
     right = 0
     fright = 0 
     front = 0 
@@ -15,24 +15,29 @@ def main():
     regions = {'right':right,'fright':fright,'front':front,'fleft':left,'left':left}
     rospy.init_node('swcr',anonymous=True)
     pub = rospy.Publisher('/cmd_vel',Twist,queue_size=10)
-    sub = rospy.Subscriber("/sonar",sensor,callback)
+    sub1 = rospy.Subscriber("/sonar1",Range,callback1)
+    sub2 = rospy.Subscriber("/sonar2",Range,callback2)
+    sub3 = rospy.Subscriber("/sonar3",Range,callback3)
+    sub4 = rospy.Subscriber("/sonar4",Range,callback4)
+    sub5 = rospy.Subscriber("/sonar5",Range,callback5)
     print("In main")
     rospy.spin()
         
     
-def callback(msg):
-    left = msg.l
-    fleft = msg.fl
-    front = msg.fm
-    fright = msg.fr
-    right = msg.r
+def callback1(msg):
+    right = msg.range
+    print(right)
+def callback2(msg):
+    fright = msg.range
+def callback3(msg):
+    front = msg.range
+def callback4(msg):
+    fleft = msg.range
+def callback5(msg):
+    left = msg.range
     regions = {'right':right,'fright':fright,'front':front,'fleft':fleft,'left':left}
     print(regions)
-    msg = Twist()
-    msg.linear.x = 0.5
-    msg.angular.z = 0.3
-    #pub.publish(msg)
-    #take_action(regions)
+    take_action(regions)
         
 	
 def take_action(regions):

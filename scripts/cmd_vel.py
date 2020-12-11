@@ -15,9 +15,9 @@ def main():
     regions = {'right':right,'fright':fright,'front':front,'fleft':left,'left':left}
     rospy.init_node('swcr',anonymous=True)
     pub = rospy.Publisher('/cmd_vel',Twist,queue_size=10)
-    sub = rospy.Subscriber("/sonar",sensor,callback)
-    print("In main")
-    rospy.spin()
+    take_action(regions)
+    #sub = rospy.Subscriber("/sonar",sensor,callback)
+    #rospy.spin()
         
     
 def callback(msg):
@@ -31,7 +31,7 @@ def callback(msg):
     msg = Twist()
     msg.linear.x = 0.5
     msg.angular.z = 0.3
-    #pub.publish(msg)
+    pub.publish(msg)
     #take_action(regions)
         
 	
@@ -86,4 +86,8 @@ def take_action(regions):
 
 if __name__ == '__main__':
     main()
-    
+    r = rospy.Rate(30) #specify rate in Hz based upon your desired PID sampling time, i.e. if desired sample time is 33ms specify rate as 30Hz
+    while not rospy.is_shutdown():
+        #e_drone.pid()
+        main()
+        r.sleep()

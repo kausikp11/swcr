@@ -5,7 +5,7 @@
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
-  <arg name="model" default="$(find swcr_main)/urdf/swcr_final.urdf.xacro"/>
+  <arg name="model" default="$(find swcr)/urdf/swcr_final.urdf.xacro"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find ck9_autonomous)/scripts/world1.world"/>
     <arg name="debug" value="$(arg debug)" />

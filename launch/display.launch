@@ -10,7 +10,7 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find swcr_main)/urdf.rviz" required="true"/>
+    args="-d $(find swcr)/urdf.rviz" required="true"/>
 
   <!--<rosparam command="load" file="$(find swcr_main)/config/swcr.yaml"/>-->
 
